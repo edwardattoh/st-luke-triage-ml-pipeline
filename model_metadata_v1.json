@@ -1,0 +1,43 @@
+{
+  "model_name": "st_luke_triage_histgbm_v1",
+  "version": "1.0.0",
+  "target": "High_Acuity_Triage (ESI Level 1/2 Escalation)",
+  "operational_threshold_tau": 0.2,
+  "train_date_range": "2019-05-08 to 2023-05-31",
+  "holdout_metrics": {
+    "roc_auc": 0.827,
+    "roc_auc_95_ci": [
+      0.8112,
+      0.8411
+    ],
+    "pr_auc": 0.6067,
+    "brier_score": 0.1114,
+    "precision_at_10pct": 0.7196,
+    "lift_at_10pct": 3.79,
+    "recall_at_tau_020": 0.688
+  },
+  "required_numeric_features": [
+    "Age",
+    "Heart_Rate_bpm",
+    "Systolic_BP_mmHg",
+    "SpO2_pct",
+    "Prior_ED_Visits_12m",
+    "Shock_Index_Clean",
+    "Hypoxia_Flag_Clean",
+    "Senior_HighRisk_Clean",
+    "Admit_Month",
+    "Admit_DayOfWeek"
+  ],
+  "required_categorical_features": [
+    "Gender",
+    "Blood Type",
+    "Medical Condition",
+    "Insurance Provider",
+    "Admission Type"
+  ],
+  "train_imputation_medians": {
+    "Heart_Rate_bpm": 83.0,
+    "Systolic_BP_mmHg": 123.0,
+    "SpO2_pct": 96.3
+  }
+}
